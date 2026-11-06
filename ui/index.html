@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NOVA Asistan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="product-panel" aria-label="NOVA asistan">
+        <header class="topbar">
+          <span id="status" class="status">Hazır</span>
+        </header>
+
+        <section class="hero" aria-label="NOVA">
+          <div class="brand-mark">N</div>
+          <h1>NOVA</h1>
+          <p class="subtitle">LLM destekli masaüstü sesli asistan</p>
+          <p class="description">
+            Sesli veya yazılı komut verin, NOVA güvenli masaüstü işlemlerini sizin için gerçekleştirsin.
+          </p>
+        </section>
+
+        <section id="errorBox" class="notice error-box hidden" aria-live="polite"></section>
+
+        <section id="listeningOverlay" class="listening-overlay hidden" aria-live="polite">
+          <div class="listening-orb" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="listening-copy">
+            <strong>Dinliyorum</strong>
+            <p>Komutunuzu söyleyin. Sessizlik olunca otomatik çalıştıracağım.</p>
+          </div>
+        </section>
+
+        <section id="welcomePanel" class="welcome-panel" aria-label="Karşılama">
+          <h2>Size nasıl yardımcı olabilirim?</h2>
+          <p>Sesli veya yazılı komut verebilirsiniz.</p>
+        </section>
+
+        <section id="chatArea" class="chat-area hidden" aria-label="NOVA sonuçları">
+          <div id="chatLog" class="chat-log"></div>
+          <div id="wakeGreeting" class="wake-greeting hidden">Buyurun, sizi dinliyorum.</div>
+          <p id="wakeNotice" class="wake-notice hidden">Komutunuzu yazabilir veya söyleyebilirsiniz.</p>
+        </section>
+
+        <section class="composer" aria-labelledby="command-title">
+          <label id="command-title" for="commandInput">Komut</label>
+          <div class="composer-shell">
+            <button id="micButton" class="icon-button" type="button" aria-label="Sesli komut">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 14.75a3.25 3.25 0 0 0 3.25-3.25v-5a3.25 3.25 0 0 0-6.5 0v5A3.25 3.25 0 0 0 12 14.75Z" />
+                <path d="M18 10.75v.75a6 6 0 0 1-12 0v-.75" />
+                <path d="M12 17.5v3" />
+                <path d="M8.75 20.5h6.5" />
+              </svg>
+            </button>
+            <textarea id="commandInput" rows="1" placeholder="NOVA’ya bir komut verin..."></textarea>
+            <button id="planButton" class="send-button" type="button" aria-label="Gönder" disabled>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h13" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </button>
+            <button id="applyButton" class="hidden" type="button">Onayla ve Uygula</button>
+            <button id="cancelButton" class="hidden" type="button">İptal Et</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js?v=siri-like-wake-2"></script>
+  </body>
+</html>
